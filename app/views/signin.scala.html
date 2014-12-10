@@ -1,0 +1,79 @@
+@(signinForm: Form[SignIn])
+
+@import helper._
+
+@main("SignUP") {
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Login Form</title>
+
+  <link rel="stylesheet" href="/assets/stylesheets/style.css" media="screen" type="text/css" />
+  <link rel="stylesheet" href="/assets/stylesheets/bootstrap.css" type="text/css"/>
+  
+    <script  type="text/javascript" src='@routes.Assets.at("/javascripts/bootstrap.js")'></script>
+    <script  type="text/javascript" src='@routes.Assets.at("/javascripts/logIn.js")'></script>
+
+</head>
+
+ 
+
+ 
+
+<body onload="nodiv()">
+
+  <div class="div1">
+
+    <div class="form">
+        <h2>Sign In</h2>
+        <form name="logForm" method="post" action="@routes.Application.authenticate" onsubmit="return validate(this)">
+
+   
+
+   @if(flash.contains("error")) {
+    <p class="success">
+      @flash.get("error")
+    </p>
+}
+
+
+@if(flash.contains("success")) {
+    <p class="success">
+        @flash.get("success")
+    </p>
+}
+
+       <input type="text" placeholder="Email" name="email" id="3" onfocus="email (this)"  onkeypress="email (this)" onkeyup="email (this)">
+
+        
+         <span id="wrong3"><i style="font-size:1.5em;position:relative;left:50%;"><strong>&#xd7;</strong></i></span>
+  <span id="tick3"><i style="font-size:1.5em;position:relative;left:10%;"><strong>&#x2713;</strong></i></span>
+
+
+    
+      <input type="password" name="password"  placeholder="Password" id="4" onfocus="OnFocusPassword (this)" onblur="OnBlurPassword (this)" onkeypress="OnFocusPassword (this)" onkeyup="OnFocusPassword (this)" /></td>
+           
+            <span id="wrong4"><i style="font-size:1.5em;position:relative;left:50%;"><strong>&#xd7;</strong></i></span>
+  <span id="tick4"><i style="font-size:1.5em;position:relative;left:10%;"><strong>&#x2713;</strong></i></span>
+
+
+
+ <center>   
+ <input type="submit" value="Submit"/></center>
+
+            </form>
+           
+    </div>
+   </div>
+
+
+  
+
+</body>
+
+</html>
+}

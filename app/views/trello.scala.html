@@ -1,0 +1,96 @@
+
+
+@import helper._
+
+@main("") {
+
+<!DOCTYPE html>
+<html ng-app="sortableApp">
+<head>
+	<title>Trello Boards</title>
+
+	<!-- Css Files included here -->
+	  <link rel="stylesheet" type="text/css" href="/assets/stylesheets/con.css">
+	  <link rel="stylesheet" type="text/css" href="/assets/stylesheets/bootstrap.min.css">
+	  <link rel="stylesheet" type="text/css" href="/assets/stylesheets/bootstrap.css">
+	<!-- Js Files included here -->
+	<script type="text/javascript" src="/home/vikas/Desktop/folder/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js"></script>
+	<script type="text/javascript" src="/home/vikas/Desktop/folder/jquery-ui-1.10.4.custom/js/jquery-1.10.2.js"></script>
+	   <script type="text/javascript" src='@routes.Assets.at("/javascripts/bootstrap.js")'></script>
+	  <script type="text/javascript" src='@routes.Assets.at("/javascripts/bootstrap.min.js")'></script>
+	  <script  type="text/javascript" src='@routes.Assets.at("/javascripts/jquery.min.js")'></script>
+	  <script  type="text/javascript" src='@routes.Assets.at("/javascripts/jquery-ui.js")'></script>
+	  <script  type="text/javascript" src='@routes.Assets.at("/javascripts/angular.min.js")'></script>
+	  <script  type="text/javascript" src='@routes.Assets.at("/javascripts/sortable.js")'></script>
+	  <script type="text/javascript" src='@routes.Assets.at("/javascripts/con.js")'></script>
+ 	  <script type="text/javascript" src='@routes.Assets.at("/javascripts/dir-dnd.js")'></script>
+
+
+
+</head>
+<body>
+ 	<div id="top">
+		<img src="/assets/images/Selection_021.png">
+	
+
+
+
+<button>
+ <a href="@routes.Application.logout()">Log Out</a>
+</button>
+
+
+		</div>
+
+
+
+
+
+
+
+	<div ng-controller="sortableController" class="container">
+ 
+ 		<div class="floatleft" id="s1">
+    	
+    		<h2>To Do</h2>
+	      	<div ui-sortable="sortableOptions" class="apps-container screen floatleft"  ng-model="todoModel">
+	        	<div class="app" ng-repeat="item in todoModel">{{item.value}}</div>
+	      	</div>
+
+	      	
+	        	<div class="apps-container" add ng-show="showDiv(gocats1)"> <textarea ng-model="data1"></textarea> <button id="b1" ng-click="addTask1(); gocats1 = !gocats1;">Add</button><button ng-click="gocats1 = !gocats1">&#10006;</button> </div>
+        	<span  id="add1"  ng-click="gocats1 = true" >Add a Card ...</span>
+
+    	</div>
+
+    	<div class="floatleft" id="s2">
+
+     		<h2>Doing</h2>
+      		<div ui-sortable="sortableOptions" class="apps-container screen floatleft" ng-model="doingModel">
+       		 	<div  class="app" ng-repeat="item in doingModel">{{item.value}}</div>
+      		</div>
+
+      		 <div class="apps-container" add ng-show="showDiv(gocats2)"> <textarea ng-model="data2"></textarea> <button id="b1" ng-click="addTask2(); gocats2 = !gocats2;">Add</button><button ng-click="gocats2 = !gocats2">&#10006;</button> </div>
+       		<span id="add2"  ng-click="gocats2 = true">Add a Card ...</span>
+		
+
+    	</div>
+
+    	<div class="floatleft" id="s3">
+     		<h2>Done</h2>
+      		<div ui-sortable="sortableOptions" class="apps-container screen floatleft" ng-model="doneModel" >
+      			<div  class="app" ng-repeat="item in doneModel">{{item.value}}</div>
+      		</div>
+
+      		<div class="apps-container" ng-show="showDiv(gocats3)"> <textarea ng-model="data3"></textarea> <button id="b1" ng-click="addTask3(); gocats3 = !gocats3;">Add</button><button ng-click="gocats3 = !gocats3">&#10006;</button> </div>
+         	<span id="add3"  ng-click="gocats3 = true">Add a Card ...</span>
+		 	</div>
+
+    </div>
+
+    
+
+
+</body>
+</html>>
+}

@@ -1,0 +1,87 @@
+@(signupForm: Form[User])
+
+@import helper._
+
+@main("User") {
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Login Form</title>
+
+   <link rel="stylesheet" href="/assets/stylesheets/style.css" media="screen" type="text/css" />
+  <link rel="stylesheet" href="/assets/stylesheets/bootstrap.css" type="text/css"/>
+  
+    <script  type="text/javascript" src='@routes.Assets.at("/javascripts/bootstrap.js")'></script>
+ <script  type="text/javascript" src='@routes.Assets.at("/javascripts/signUp.js")'></script> 
+</head>
+
+ 
+ 
+
+<body onload="nodiv()">
+
+  <div class="div1">
+
+   <h2>Sign Up Form</h2>
+
+    <div class="form">
+                
+               
+              
+ <form method="post" action="@routes.Application.save()" name="myForm"  onsubmit="return validate(this)">
+
+
+
+                <input type="text" name="firstName"  placeholder="First Name" id="1" onfocus="OnFocusInput (this)" onblur="OnBlurInput (this)" onkeypress="OnFocusInput (this)" onkeyup="OnFocusInput (this)" />
+ <span id="wrong1"><i style="font-size:1.5em;position:relative;left:50%;"><strong>&#xd7;</strong></i></span>
+  <span id="tick1"><i style="font-size:1.5em;position:relative;left:10%;"><strong>&#x2713;</strong></i></span>
+
+ 
+        
+                <input type="text" name="lastName"  placeholder="Last Name" id="2" onfocus="OnFocusInput2 (this)" onblur="OnBlurInput2 (this)" onkeypress="OnFocusInput2 (this)" onkeyup="OnFocusInput2 (this)" />
+  <span id="wrong2"><i style="font-size:1.5em;position:relative;left:50%;"><strong>&#xd7;</strong></i></span>
+  <span id="tick2"><i style="font-size:1.5em;position:relative;left:10%;"><strong>&#x2713;</strong></i></span>
+
+
+   
+        
+       <input type="text" placeholder="Email" name="email" id="3" onfocus="email (this)"  onkeypress="email (this)" onkeyup="email (this)">
+
+        
+         <span id="wrong3"><i style="font-size:1.5em;position:relative;left:50%;"><strong>&#xd7;</strong></i></span>
+  <span id="tick3"><i style="font-size:1.5em;position:relative;left:10%;"><strong>&#x2713;</strong></i></span>
+
+
+    
+      <input type="password" name="password"  placeholder="Password" id="4" onfocus="OnFocusPassword (this)" onblur="OnBlurPassword (this)" onkeypress="OnFocusPassword (this)" onkeyup="OnFocusPassword (this)" /></td>
+           
+            <span id="wrong4"><i style="font-size:1.5em;position:relative;left:50%;"><strong>&#xd7;</strong></i></span>
+  <span id="tick4"><i style="font-size:1.5em;position:relative;left:10%;"><strong>&#x2713;</strong></i></span>
+
+
+    
+        <input type="password" placeholder="Confirm Password"  id="5" onfocus ="OnFocusConfirmPassword (this)" onblur="OnBlurConfirmPassword (this)" onkeypress="OnFocusConfirmPassword (this)" onkeyup="checkPass(); return false;"></td>
+             
+            <span id="wrong5"><i style="font-size:1.5em;position:relative;left:50%;"><strong>&#xd7;</strong></i></span>
+  <span id="tick5"><i style="font-size:1.5em;position:relative;left:10%;"><strong>&#x2713;</strong></i></span>
+
+
+             </div>
+             <div>
+             <center>
+       <input type="submit" value="submit"/></center>
+        </div>  
+        </form>
+  </div>
+</div>
+
+  
+
+</body>
+
+</html>
+}
